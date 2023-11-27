@@ -9,10 +9,10 @@ provider "aws" {
 # create a service/resource on the cloud - ec2 on AWS
 
 resource "aws_instance" "nginx_instance" {
-   ami = var.nginx_ami_id
-   instance_type = var.instance_type
+   ami = "ami-0d8032c3fa7e6a778"
+   instance_type = "t2.micro"
    tags = {
-     Name = var.nginx_instance_name
+     Name = "alex-terraform-test-nginx"
    }
 
 }
