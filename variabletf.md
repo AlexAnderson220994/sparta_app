@@ -1,18 +1,20 @@
+````
 # Who is the cloud provider
 provider "aws" {
 
 # location of AWS
-  region = "eu-west-1"
+  region = var.aws-region
 
 }
 # To download required dependencies
 # create a service/resource on the cloud - ec2 on AWS
 
 resource "aws_instance" "nginx_instance" {
-   ami = "ami-0d8032c3fa7e6a778"
-   instance_type = "t2.micro"
+   ami = var.nginx_ami_id
+   instance_type = var.instance_type
    tags = {
-     Name = "alex-terraform-test-nginx"
+     Name = var.nginx_instance_name
    }
 
 }
+````
